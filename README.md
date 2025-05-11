@@ -16,7 +16,14 @@ Built with **React** and styled using **Tailwind CSS** and **Flowbite** for clea
 ### Pages:
 
 - **Home**: Lists all available events
+  ![image](https://github.com/user-attachments/assets/7f07b351-23ce-4bbb-b6e3-804f8a7969a8)
+
 - **Email**: Collects email before redirecting to the actual event page
+  ![image](https://github.com/user-attachments/assets/a07a34b8-4b00-4a79-a5fb-ae3b958385f8)
+
+- **Example original site** : sample original site to get tickets
+  ![image](https://github.com/user-attachments/assets/a3228f40-d661-499c-9e7f-db45d1dbdb5e)
+
 
 ## 🚀 Backend
 
