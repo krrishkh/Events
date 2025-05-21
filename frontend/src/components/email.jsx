@@ -19,6 +19,9 @@ const Email = () => {
     e.preventDefault();
 
     try {
+
+      console.log("Posting to backend:", "https://events-backend1.onrender.com/submit-email");
+
       const res = await fetch("https://events-backend1.onrender.com/submit-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
