@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from db import get_events
 from pydantic import BaseModel
+from scheduler import start_scheduler
+from db import init_db, save_events
+from scraper import scrape_events
+import uvicorn
 
 app = FastAPI()
 
@@ -19,6 +23,17 @@ def list_events():
     events = get_events()
     print("Fetched events:", events)
     return events
+
+
+@app.on_event("startup")
+def startup_event():
+    init_db()
+    events = scrape_events()
+    if events:
+        save_events(events)
+        print(f"{len(events)} events scraped and saved.")
+    start_scheduler()
+
 
 
 @app.get("/ping")
